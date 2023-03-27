@@ -11,13 +11,14 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  width: fit-content;
   font-family: HankenGrotesk;
 }
 
 .container {
   display: flex;
-  width: 600px;
   justify-content: center;
+  width: auto;
   border-radius: 20px;
 }
 .container .left {
@@ -113,32 +114,6 @@ body {
   background-color: hsl(224, 30%, 27%);
   width: 100%;
   border-radius: 20px;
-}
-
-@media (max-width: 760px) {
-  .left {
-    width: 100%;
-    padding: 0px;
-    border-radius: 0px;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-  }
-  .left .left-left_score {
-    padding: 20px;
-    text-align: center;
-  }
-  .right {
-    padding: 0;
-    width: 80%;
-    margin: 0 auto;
-  }
-  .container {
-    width: 100%;
-    flex-direction: column;
-    border-radius: 0px;
-    overflow: hidden;
-    padding: 0;
-  }
 }
 
 /*# sourceMappingURL=styles.css.map */
