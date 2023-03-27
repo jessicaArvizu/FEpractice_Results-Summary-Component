@@ -3,9 +3,13 @@
 
 /* Primary*/
 $lightRed: hsl(0, 100%, 67%);
+$lightRedBackground: hsla(0, 100%, 67%, 0.1);
 $orangeYellow: hsl(39, 100%, 56%);
+$orangeYellowBackground: hsla(39, 100%, 56%, 0.1);
 $greenTeal: hsl(166, 100%, 37%);
+$greenTealBackground: hsla(166, 100%, 37%, 0.1);
 $cobaltBlue: hsl(234, 85%, 45%);
+$cobaltBlueBackground: hsla(234, 85%, 45%, 0.1);
 
 /*Gradients*/
 $lightSlateBlue: hsl(252, 100%, 67%); //Bakground
@@ -18,91 +22,151 @@ $white: hsl(0, 0%, 100%);
 $paleBlue: hsl(221, 100%, 96%);
 $lightLavender: hsl(241, 100%, 89%);
 $darkGreyBlue: hsl(224, 30%, 27%);
+$darkGreyBlueLighter: hsla(224, 30%, 27%, 0.5);
 
 @font-face {
     font-family: HankenGrotesk;
     src: url(assets/fonts/HankenGrotesk-VariableFont_wght.ttf);
 }
 
-div {
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
     font-family: HankenGrotesk;
 }
 
 .container {
+    display: flex;
+    width: 600px;
+    justify-content: center;
+    border-radius: 20px;
 
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    /* bring your own prefixes */
-    transform: translate(-50%, -50%);
-    border-radius: 10%;
+    .left {
+        color: $lightLavender;
+        padding: 20px;
+        width: 40%;
+        text-align: center;
+        border-radius: 20px;
+        background: linear-gradient($lightSlateBlue, $lightRoyalBlue);
 
-    .row {
-        @include j_custom_row;
+        .h4 {
+            text-align: center;
+        }
 
-        .col {
-            padding: 0;
+        .left_score {
+            padding: 50px;
+            width: 74px;
+            height: 74px;
+            border-radius: 100%;
+            background: linear-gradient($violetBlue, $persianBlue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin: 0 auto;
+            text-align: center;
 
-            .j_result_cnt {
-                height: 100%;
-                width: 100%;
-                background-image: linear-gradient($lightSlateBlue, $lightRoyalBlue);
-                text-align: center;
-
-                .internal_div {
-                    .lavender_txt {
-                        color: $lightLavender;
-                    }
-
-                    .white_txt {
-                        color: $white;
-                    }
-
-                    .j_result_circle {
-                        background-image: linear-gradient($violetBlue, $persianBlue);
-                    }
-                }
-
+            .left_big_score {
+                color: $white;
+                font-weight: bold;
+                font-size: 50px;
             }
 
-            .j_summary_cnt {
-                background-color: yellow;
-                height: 100%;
-                width: 100%;
-
-                .internal_div {
-                    .j_reaction_cnt {
-                        .row{
-                            @include j_custom_row;
-                        }
-                        .p{
-                            @include score_styles;
-                        }
-                        color: $lightRed;
-                        padding: 10px;
-                        background-color: red;
-                    }
-
-                    .j_memory_cnt {
-                        color: $orangeYellow;
-                    }
-
-                    .j_verbal_cnt {
-                        color: $greenTeal;
-                    }
-
-                    .j_visual_cnt {
-                        color: $cobaltBlue;
-                    }
-
-                    .j_btn {
-                        width: 100%;
-                        color: white;
-                        background: $darkGreyBlue;
-                    }
-                }
+            .left_small_score {
+                color: $lightLavender;
             }
+
         }
     }
 
+    .right {
+        width: 50%;
+        padding: 20px;
+
+        .right_scores {
+            .score {
+                .right_score_black {
+                    color: $darkGreyBlue;
+                }
+
+                .right_score_gray {
+                    color: $darkGreyBlueLighter;
+                }
+
+                .score_icon {
+                    display: flex;
+
+                    img {
+                        margin-right: 5px;
+                    }
+                }
+            }
+
+            .score_reaction {
+                @include score_styles;
+                background-color: $lightRedBackground;
+                color: $lightRed;
+            }
+
+            .score_memory {
+                @include score_styles;
+                background-color: $orangeYellowBackground;
+                color: $orangeYellow;
+            }
+
+            .score_visual {
+                @include score_styles;
+                background-color: $cobaltBlueBackground;
+                color: $cobaltBlue;
+            }
+
+            .score_verbal {
+                @include score_styles;
+                background-color: $greenTealBackground;
+                color: $greenTeal;
+            }
+
+            .right_button {
+                margin-top: 30px;
+                padding: 15px 30px;
+                border: none;
+                color: $white;
+                outline: none;
+                background-color: $darkGreyBlue;
+                width: 100%;
+                border-radius: 20px;
+            }
+        }
+    }
+}
+
+@media (max-width: 760px) {
+    .left {
+        width: 100%;
+        padding: 0px;
+        border-radius: 0px;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+
+        .left-left_score {
+            padding: 20px;
+            text-align: center;
+        }
+    }
+
+    .right {
+        padding: 0;
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .container {
+        width: 100%;
+        flex-direction: column;
+        border-radius: 0px;
+        overflow: hidden;
+        padding: 0;
+    }
 }

@@ -6,73 +6,139 @@
   font-family: HankenGrotesk;
   src: url(assets/fonts/HankenGrotesk-VariableFont_wght.ttf);
 }
-div {
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
   font-family: HankenGrotesk;
 }
 
 .container {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  /* bring your own prefixes */
-  transform: translate(-50%, -50%);
-  border-radius: 10%;
+  display: flex;
+  width: 600px;
+  justify-content: center;
+  border-radius: 20px;
 }
-.container .row {
-  padding: 0;
+.container .left {
+  color: hsl(241, 100%, 89%);
+  padding: 20px;
+  width: 40%;
+  text-align: center;
+  border-radius: 20px;
+  background: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
 }
-.container .row .col {
-  padding: 0;
-}
-.container .row .col .j_result_cnt {
-  height: 100%;
-  width: 100%;
-  background-image: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+.container .left .h4 {
   text-align: center;
 }
-.container .row .col .j_result_cnt .internal_div .lavender_txt {
+.container .left .left_score {
+  padding: 50px;
+  width: 74px;
+  height: 74px;
+  border-radius: 100%;
+  background: linear-gradient(hsl(256, 72%, 46%), hsla(241, 72%, 46%, 0));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 auto;
+  text-align: center;
+}
+.container .left .left_score .left_big_score {
+  color: hsl(0, 0%, 100%);
+  font-weight: bold;
+  font-size: 50px;
+}
+.container .left .left_score .left_small_score {
   color: hsl(241, 100%, 89%);
 }
-.container .row .col .j_result_cnt .internal_div .white_txt {
-  color: hsl(0, 0%, 100%);
+.container .right {
+  width: 50%;
+  padding: 20px;
 }
-.container .row .col .j_result_cnt .internal_div .j_result_circle {
-  background-image: linear-gradient(hsl(256, 72%, 46%), hsla(241, 72%, 46%, 0));
+.container .right .right_scores .score .right_score_black {
+  color: hsl(224, 30%, 27%);
 }
-.container .row .col .j_summary_cnt {
-  background-color: yellow;
-  height: 100%;
-  width: 100%;
+.container .right .right_scores .score .right_score_gray {
+  color: hsla(224, 30%, 27%, 0.5);
 }
-.container .row .col .j_summary_cnt .internal_div .j_reaction_cnt {
+.container .right .right_scores .score .score_icon {
+  display: flex;
+}
+.container .right .right_scores .score .score_icon img {
+  margin-right: 5px;
+}
+.container .right .right_scores .score_reaction {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: hsla(0, 100%, 67%, 0.1);
   color: hsl(0, 100%, 67%);
-  padding: 10px;
-  background-color: red;
 }
-.container .row .col .j_summary_cnt .internal_div .j_reaction_cnt .row {
-  padding: 0;
-}
-.container .row .col .j_summary_cnt .internal_div .j_reaction_cnt .p .j_score {
-  display: inline-block;
-  color: blue;
-}
-.container .row .col .j_summary_cnt .internal_div .j_reaction_cnt .p .j_score_comparison {
-  display: inline-block;
-  color: orange;
-}
-.container .row .col .j_summary_cnt .internal_div .j_memory_cnt {
+.container .right .right_scores .score_memory {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: hsla(39, 100%, 56%, 0.1);
   color: hsl(39, 100%, 56%);
 }
-.container .row .col .j_summary_cnt .internal_div .j_verbal_cnt {
-  color: hsl(166, 100%, 37%);
-}
-.container .row .col .j_summary_cnt .internal_div .j_visual_cnt {
+.container .right .right_scores .score_visual {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: hsla(234, 85%, 45%, 0.1);
   color: hsl(234, 85%, 45%);
 }
-.container .row .col .j_summary_cnt .internal_div .j_btn {
+.container .right .right_scores .score_verbal {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: hsla(166, 100%, 37%, 0.1);
+  color: hsl(166, 100%, 37%);
+}
+.container .right .right_scores .right_button {
+  margin-top: 30px;
+  padding: 15px 30px;
+  border: none;
+  color: hsl(0, 0%, 100%);
+  outline: none;
+  background-color: hsl(224, 30%, 27%);
   width: 100%;
-  color: white;
-  background: hsl(224, 30%, 27%);
+  border-radius: 20px;
+}
+
+@media (max-width: 760px) {
+  .left {
+    width: 100%;
+    padding: 0px;
+    border-radius: 0px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+  .left .left-left_score {
+    padding: 20px;
+    text-align: center;
+  }
+  .right {
+    padding: 0;
+    width: 80%;
+    margin: 0 auto;
+  }
+  .container {
+    width: 100%;
+    flex-direction: column;
+    border-radius: 0px;
+    overflow: hidden;
+    padding: 0;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

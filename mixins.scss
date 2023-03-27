@@ -3,17 +3,9 @@
 }
 
 @mixin score_styles{
-    .j_score{
-        display:inline-block;
-        color:blue;
-    }
-
-    .j_score_comparison{
-        display:inline-block;
-        color:orange;
-    }
-}
-
-@mixin j_custom_row{
-    padding:0;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 10px;
 }
