@@ -1,0 +1,19 @@
+@mixin internal_div{
+
+}
+
+@mixin score_styles{
+    .j_score{
+        display:inline-block;
+        color:blue;
+    }
+
+    .j_score_comparison{
+        display:inline-block;
+        color:orange;
+    }
+}
+
+@mixin j_custom_row{
+    padding:0;
+}

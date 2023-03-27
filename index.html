@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Results summary component</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container shadow">
+    <div class="row j_custom_row">
+      <div class="col">
+        <div id="j_result_cnt" class="j_result_cnt rounded">
+          <div class="internal_div">
+            <div class="lavender_txt">
+              <h4>Your Result</h4>
+            </div>
+            <div id="j_result_circle" class="j_result_circle rounded-circle">
+              <div id="j_final_score" class="j_final_score white_txt">
+                <h1>76</h1>
+              </div>
+              <div class="lavender_txt">
+                of 100000
+              </div>
+            </div>
+            <div class="white_txt">
+              <h3>Great</h3>
+            </div>
+            <div class="lavender_txt">
+              <p>You scored higher than 65% of the people who have taken these tests.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div id="j_summary_cnt" class="j_summary_cnt">
+          <div class="internal_div">
+            <div>
+              Summary
+            </div>
+            <div class="j_reaction_cnt rounded">
+              <row class="j_custom_row">
+                <col><img src = "assets/images/icon-reaction.svg" alt="Reaction"/></col>Reaction
+                <col><p>80</p><p>/100</p></col>
+              </row>
+            </div>
+  
+            <div class="j_memory_cnt rounded">
+              <img src = "assets/images/icon-memory.svg" alt="Memory"/> Memory
+              92 / 100
+            </div>
+  
+            <div class="j_verbal_cnt rounded">
+              <img src = "assets/images/icon-verbal.svg" alt="Verbal"/> Verbal
+              61 / 100
+            </div>
+  
+            <div class="j_visual_cnt rounded">
+              <img src = "assets/images/icon-visual.svg" alt="Visual"/> Visual
+              72 / 100
+            </div>
+  
+            <div>
+              <button type="button" class="btn rounded j_btn">Continue</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Jessica Arvizu</a>.
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

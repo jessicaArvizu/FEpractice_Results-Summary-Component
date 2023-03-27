@@ -1,0 +1,108 @@
+@import 'mixins.scss';
+/* Colors */
+
+/* Primary*/
+$lightRed: hsl(0, 100%, 67%);
+$orangeYellow: hsl(39, 100%, 56%);
+$greenTeal: hsl(166, 100%, 37%);
+$cobaltBlue: hsl(234, 85%, 45%);
+
+/*Gradients*/
+$lightSlateBlue: hsl(252, 100%, 67%); //Bakground
+$lightRoyalBlue: hsl(241, 81%, 54%); //Background
+$violetBlue: hsla(256, 72%, 46%, 1); //Circle
+$persianBlue: hsla(241, 72%, 46%, 0); //Circle
+
+/*Neutral*/
+$white: hsl(0, 0%, 100%);
+$paleBlue: hsl(221, 100%, 96%);
+$lightLavender: hsl(241, 100%, 89%);
+$darkGreyBlue: hsl(224, 30%, 27%);
+
+@font-face {
+    font-family: HankenGrotesk;
+    src: url(assets/fonts/HankenGrotesk-VariableFont_wght.ttf);
+}
+
+div {
+    font-family: HankenGrotesk;
+}
+
+.container {
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+    border-radius: 10%;
+
+    .row {
+        @include j_custom_row;
+
+        .col {
+            padding: 0;
+
+            .j_result_cnt {
+                height: 100%;
+                width: 100%;
+                background-image: linear-gradient($lightSlateBlue, $lightRoyalBlue);
+                text-align: center;
+
+                .internal_div {
+                    .lavender_txt {
+                        color: $lightLavender;
+                    }
+
+                    .white_txt {
+                        color: $white;
+                    }
+
+                    .j_result_circle {
+                        background-image: linear-gradient($violetBlue, $persianBlue);
+                    }
+                }
+
+            }
+
+            .j_summary_cnt {
+                background-color: yellow;
+                height: 100%;
+                width: 100%;
+
+                .internal_div {
+                    .j_reaction_cnt {
+                        .row{
+                            @include j_custom_row;
+                        }
+                        .p{
+                            @include score_styles;
+                        }
+                        color: $lightRed;
+                        padding: 10px;
+                        background-color: red;
+                    }
+
+                    .j_memory_cnt {
+                        color: $orangeYellow;
+                    }
+
+                    .j_verbal_cnt {
+                        color: $greenTeal;
+                    }
+
+                    .j_visual_cnt {
+                        color: $cobaltBlue;
+                    }
+
+                    .j_btn {
+                        width: 100%;
+                        color: white;
+                        background: $darkGreyBlue;
+                    }
+                }
+            }
+        }
+    }
+
+}
