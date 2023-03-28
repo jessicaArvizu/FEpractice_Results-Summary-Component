@@ -154,11 +154,22 @@ body {
                 outline: none;
                 background-color: $darkGreyBlue;
                 width: 100%;
-                border-radius: 20px;
+                border-radius: 30px;
+
+                &:active{
+                    background: linear-gradient($lightSlateBlue, $lightRoyalBlue);
+                }
             }
         }
     }
 }
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) { 
+    .container{
+        max-width: 540px !important;
+    }
+ }
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) { 

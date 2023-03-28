@@ -130,9 +130,17 @@ body {
   outline: none;
   background-color: hsl(224, 30%, 27%);
   width: 100%;
-  border-radius: 20px;
+  border-radius: 30px;
+}
+.container .right .right_scores .right_button:active {
+  background: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
 }
 
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px !important;
+  }
+}
 @media (min-width: 768px) {
   .container {
     max-width: 540px !important;
